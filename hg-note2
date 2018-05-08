@@ -69,5 +69,8 @@ linux发行版通常会把类库的头文件和相关的pkg-config分拆成一�
 pip install --upgrade pip
 
 
+git
+pull=fetch+merge，pull的话，下拉远程分支并与本地分支合并。fetch只是下拉远程分支，怎么合并，可以自己再做选择。
 
-
+git commit是将本地修改过的文件提交到本地库中。
+git push是将本地库中的最新信息发送给远程库。
