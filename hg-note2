@@ -1,12 +1,3 @@
-首先需要给Ubuntu16.04安装Chinese语言包支持。
-do apt-get install ibus ibus-clutter ibus-gtk ibus-gtk3 ibus-qt4
-im-config -s ibus
-sudo apt-get install ibus-pinyin
-
-====firefox can not play music
-
-sudo apt-get install ubuntu-restricted-extras
-
 sudo lshw 查看主板
 
 b85w
@@ -71,44 +62,15 @@ linux发行版通常会把类库的头文件和相关的pkg-config分拆成一�
     (注:以上不含使用ctypes/ffi或者裸dlsym方式直接调用libpython.so)
 
 其他正常使用python或者通过安装源内的python类库的不需要python-dev.
-No module named setuptools
-
-wget https://pypi.python.org/packages/source/s/setuptools/setuptools-0.6c11.tar.gz
-
-解压setuptools包
-
-# tar -xvf setuptools-0.6c11.tar.gz
-
-# cd setuptools-0.6c11
-
-编译setuptools
-
-# python setup.py build
 
 使用pip3 install uwsgi不成功,想到可能是需要安装python3-dev,但我的python3.5是手动安装的,如何不使用apt-get命令手动安装python3-dev呢?
-开始执行setuptools安装
 
 
 pip install --upgrade pip
-# sudo python setup.py install
 
 
-_posixsubprocess.c:3:20: fatal error: Python.h: No such file or directory
-sudo apt-get install python-dev
+git
+pull=fetch+merge，pull的话，下拉远程分支并与本地分支合并。fetch只是下拉远程分支，怎么合并，可以自己再做选择。
 
-login raspberry
-ssh pi@172.16.1.15
-password: raspberry
-sudo apt-get install tightvncserver
-等待片刻之后，输入
-tightvncserver
-设置密码: raspberry
-电脑上登录，输入172.16.1.15:1 即可
-
-sudo halt
-sudo poweroff
-sudo reboot
-
-
-
-
+git commit是将本地修改过的文件提交到本地库中。
+git push是将本地库中的最新信息发送给远程库。
