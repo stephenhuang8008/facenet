@@ -1,3 +1,12 @@
+首先需要给Ubuntu16.04安装Chinese语言包支持。
+do apt-get install ibus ibus-clutter ibus-gtk ibus-gtk3 ibus-qt4
+im-config -s ibus
+sudo apt-get install ibus-pinyin
+
+====firefox can not play music
+
+sudo apt-get install ubuntu-restricted-extras
+
 sudo lshw 查看主板
 
 b85w
@@ -37,8 +46,40 @@ Existing interpreter  - all changes are system wide
 Conda/Virtual interpreter - uses selected interpreter as initial source, but creates independent copy which could be modified fot project needs.
 
 
+No module named setuptools
+
+wget https://pypi.python.org/packages/source/s/setuptools/setuptools-0.6c11.tar.gz
+
+解压setuptools包
+
+# tar -xvf setuptools-0.6c11.tar.gz
+
+# cd setuptools-0.6c11
+
+编译setuptools
+
+# python setup.py build
+
+开始执行setuptools安装
+
+# sudo python setup.py install
 
 
+_posixsubprocess.c:3:20: fatal error: Python.h: No such file or directory
+sudo apt-get install python-dev
+
+login raspberry
+ssh pi@172.16.1.15
+password: raspberry
+sudo apt-get install tightvncserver
+等待片刻之后，输入
+tightvncserver
+设置密码: raspberry
+电脑上登录，输入172.16.1.15:1 即可
+
+sudo halt
+sudo poweroff
+sudo reboot
 
 
 
