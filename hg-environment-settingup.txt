@@ -1,3 +1,5 @@
+====ubuntu安装中文
+
 首先需要给Ubuntu16.04安装Chinese语言包支持。
 do apt-get install ibus ibus-clutter ibus-gtk ibus-gtk3 ibus-qt4
 im-config -s ibus
@@ -7,60 +9,46 @@ sudo apt-get install ibus-pinyin
 
 sudo apt-get install ubuntu-restricted-extras
 
-sudo lshw 查看主板
+====查看主板
 
-b85w
+sudo lshw | grep product
 
-| grep root
 B85M-D2V
 
-下载，EaseLink可以解决迅雷、QQ旋风，快车、rayfile、纳米盘等专用链接，再用firefox的downthemall下载非常不错。快车也有linux版的，wget、aria2等都非常不错。
+====ubuntu 常用软件
 
-有gimp，photoshop里除了两个有专利版权的功能外，其他的功能gimp基本都具备了。
-
+EaseLink可以解决迅雷、QQ旋风，快车、rayfile、纳米盘等专用链接，再用firefox的downthemall下载非常不错。
+快车也有linux版的，wget、aria2等都非常不错。
+gimp，photoshop里除了两个有专利版权的功能外，其他的功能gimp基本都具备了。
 平时写博客的时候都是先用 Markdown 写好再转成 html 发到自己的博客上，好在 Tyora 这样的编辑器也是支持 Linux 的，和 Mac 与 Windows 上体验相同，Atom 也是一个三平台的开源编辑器，开发者们肯定都用过，能写 python 和 Web 开发之类的，功能异常强大，Markdown 写作也是支持的。
-
 听播客: Vocal 感觉比 Windows 都方便
 Ubuntu 自带的 PDF 阅读工具其实已经够用了，当然也可以选择著名的Foxit Reader。
 Ubuntu 和 Linux 拉开差距的地方到了，在 Windows 上我一直想要一个能和 Mac 上的各种分屏工具媲美的软件，可是一直没有。在 GNOME 环境中有一个插件叫做 Gtile，启用之后，使用自定义的快捷键直接呼出 Gtile，就能进行各种分屏操作，异常的方便，最重要的是，他是免费的。
 
+====run picharm
+enter charm, not pycharm in terminal
+the script is located in /usr/local/bin/charm
 
-/usr/local/bin/charm
-
-pip install psutil
-
-  psutil/_psutil_common.c:9:20: fatal error: Python.h: No such file or directory
-  compilation terminated.
-
-You are using pip version 9.0.1, however version 10.0.1 is available.
-You should consider upgrading via the 'pip install --upgrade pip' command.
-
-Make sure that you have installed Python development packages for your operating system.
-
-Global site-packages ("dist-packages") directories are listed in sys.path when you run:
+==== check python site package locations
+Global site-packages
 python -m site
 
-The per user site-packages directory (PEP 370) is where Python installs your local packages:
+The per user site-packages
 python -m site –user-site
+
+====picharm interpreter setting meanings
 Existing interpreter  - all changes are system wide
 Conda/Virtual interpreter - uses selected interpreter as initial source, but creates independent copy which could be modified fot project needs.
 
 install black mac
 https://www.zhihu.com/question/24370137
 
-psutil/_psutil_linux.c:12:20: fatal error: Python.h: No such file or directory
-sudo apt-get install python-dev
+====psutil/_psutil_linux.c:12:20: fatal error: Python.h: No such file or directory
+for python: sudo apt-get install python-dev
+for python3: sudo apt-get install python3-dev
 
-块是不是有setup.py文件？
-如果系统上同时安装了python2.7和python3.4 ，想要安装到python3.4，则输入命令：
-python3 setup.py install
-或者
-python34 setup.py install  （这里忘记了，可能是python3.4 setup.py install）
-输入python setup.py install 是默认安装到python2.7.
 
-问：python-dev是什么？为什么安装了python后有时还要安装python-dev？
-
-答：
+====python-dev是什么
 
 linux发行版通常会把类库的头文件和相关的pkg-config分拆成一个单独的xxx-dev(el)包.    //pkg=package,包裹
 
@@ -71,31 +59,19 @@ linux发行版通常会把类库的头文件和相关的pkg-config分拆成一�
     (注:以上不含使用ctypes/ffi或者裸dlsym方式直接调用libpython.so)
 
 其他正常使用python或者通过安装源内的python类库的不需要python-dev.
-No module named setuptools
+
+====No module named setuptools
 
 wget https://pypi.python.org/packages/source/s/setuptools/setuptools-0.6c11.tar.gz
-
 解压setuptools包
-
 # tar -xvf setuptools-0.6c11.tar.gz
-
 # cd setuptools-0.6c11
-
 编译setuptools
-
 # python setup.py build
-
-使用pip3 install uwsgi不成功,想到可能是需要安装python3-dev,但我的python3.5是手动安装的,如何不使用apt-get命令手动安装python3-dev呢?
-开始执行setuptools安装
-
-
-pip install --upgrade pip
 # sudo python setup.py install
 
 
-_posixsubprocess.c:3:20: fatal error: Python.h: No such file or directory
-sudo apt-get install python-dev
-
+====raspberry
 login raspberry
 ssh pi@172.16.1.15
 password: raspberry
@@ -104,11 +80,16 @@ sudo apt-get install tightvncserver
 tightvncserver
 设置密码: raspberry
 电脑上登录，输入172.16.1.15:1 即可
-
 sudo halt
 sudo poweroff
 sudo reboot
 
+
+====git
+git
+pull=fetch+merge，pull的话，下拉远程分支并与本地分支合并。fetch只是下拉远程分支，怎么合并，可以自己再做选择。
+git commit是将本地修改过的文件提交到本地库中。
+git push是将本地库中的最新信息发送给远程库。
 
 
 
